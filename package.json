@@ -1,0 +1,24 @@
+{
+  "name": "show-merkle-tree",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ethereumjs/trie": "^5.0.2",
+    "@next/font": "13.0.7",
+    "dotenv": "^16.0.3",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.0.7",
+    "jquery": "^3.6.2",
+    "next": "13.0.7",
+    "react": "18.2.0",
+    "react-d3-tree": "^3.4.2",
+    "react-spinners": "^0.13.7",
+    "web3": "^1.8.1"
+  }
+}
