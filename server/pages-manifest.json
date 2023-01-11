@@ -1,0 +1,12 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/components/explanation": "pages/components/explanation.html",
+  "/components/nodeview": "pages/components/nodeview.html",
+  "/components/transactionview": "pages/components/transactionview.html",
+  "/components/trieview": "pages/components/trieview.html",
+  "/components/trieviewcontainer": "pages/components/trieviewcontainer.html",
+  "/": "pages/index.html",
+  "/404": "pages/404.html"
+}
