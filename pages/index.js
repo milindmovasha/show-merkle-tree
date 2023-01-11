@@ -182,17 +182,56 @@ async function processBlock(block, setBlock, setTrieJson, setMessage) {
     return trie
 }
 
+async function showBlock(
+    blockNumber,
+    maxBlockNumber,
+    setTrie,
+    setProgress,
+    setBlock,
+    setTrieJson,
+    setMessage
+) {
+    setTrie(null)
+    setProgress(true)
+    setBlock(null)
+    setTrieJson(null)
+    setMessage("Fetching block")
+    var trie = await readProcessBlock(
+        blockNumber,
+        maxBlockNumber,
+        setBlock,
+        setTrieJson,
+        setMessage
+    )
+    if (!trie) {
+        setProgress(false)
+        setBlock(null)
+        setTrieJson(null)
+    }
+    setTrie(trie)
+}
+
 export default function Home() {
     const [trieJson, setTrieJson] = useState(null)
     const [trie, setTrie] = useState(null)
     const [myBlock, setBlock] = useState(null)
-    const [message, setMessage] = useState("Please enter block number")
+    var defaultMessage = "Please enter block number"
+    if (TEST_MODE) {
+        defaultMessage = "Please enter block number as 0 to select test block"
+    }
+    const [message, setMessage] = useState(defaultMessage)
     const [showProgress, setProgress] = useState(false)
-    const [maxBlockNumber, setMaxBlockNumber] = useState(0)
+    const [maxBlockNumber, setMaxBlockNumber] = useState(1)
 
-    getEthBlockNumber().then((blockNumber) => {
-        setMaxBlockNumber(blockNumber)
-    })
+    if (TEST_MODE == 0) {
+        getEthBlockNumber()
+            .then((blockNumber) => {
+                setMaxBlockNumber(blockNumber)
+            })
+            .catch((error) => {
+                setMessage(error)
+            })
+    }
 
     const preventDefault = (f) => (e) => {
         e.preventDefault()
@@ -206,25 +245,15 @@ export default function Home() {
             return
         }
         console.log(blockNumber)
-
-        setTrie(null)
-        setProgress(true)
-        setBlock(null)
-        setTrieJson(null)
-        setMessage("Fetching block")
-        var trie = await readProcessBlock(
+        await showBlock(
             blockNumber,
             maxBlockNumber,
+            setTrie,
+            setProgress,
             setBlock,
             setTrieJson,
             setMessage
         )
-        if (!trie) {
-            setProgress(false)
-            setBlock(null)
-            setTrieJson(null)
-        }
-        setTrie(trie)
     })
 
     return (
