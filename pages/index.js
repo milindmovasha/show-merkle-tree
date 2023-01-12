@@ -262,14 +262,13 @@ export default function Home() {
                 <title>Ethereum Transaction Merkle Tree Visualizer</title>
                 <meta name="description" content="Visiualize Ethereum Transaction Merkel Tree" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
                 <div>
                     <h1> Ethereum Transaction Merkle Tree Visualizer</h1>
                     <p className={appstyles.center}>
                         <a href="https://github.com/milindmovasha/show-merkle-tree">
-                            (https://github.com/milindmovasha/show-merkle-tree)
+                            (Source code: https://github.com/milindmovasha/show-merkle-tree)
                         </a>
                     </p>
                     <div className={appstyles.topMargin}>
