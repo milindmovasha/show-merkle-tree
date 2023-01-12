@@ -6,7 +6,7 @@ This is a project to visiualize the Ethereum Transaction Merkel Tree data struct
 
 ## Getting Started
 
-First, add the .env file in root folder of your project and provide the URL for node API you want to use. For example if you are using Alchemy, add variable as follows:
+If you want to fetch the block data using web3.js APIs, add the .env file in root folder of your project and provide the URL for node API you want to use. For example if you are using Alchemy, add variable as follows:
 
 ```
 NEXT_PUBLIC_WEB3_API_URL="https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY"
@@ -14,7 +14,7 @@ NEXT_PUBLIC_WEB3_API_URL="https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY"
 
 Note: This is a react app and hence the env variables added can be seen by anyone using dev tools. If you want to protect the API keys for production use you can run the node app on server.
 
-Next, run the application as follows and check the page http://localhost:3000 in your browser
+Next, install the packages and run the application as follows and check the page http://localhost:3000 in your browser
 
 ```bash
 npm i
@@ -31,3 +31,7 @@ You can unit test the application without fetching the block using web3 API and 
 import testblock from "../testblock3.json"
 const TEST_MODE = 1
 ```
+
+## Demo
+
+https://milindmovasha.github.io/show-merkle-tree/
