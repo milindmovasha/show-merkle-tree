@@ -107,6 +107,7 @@
 .center {
   align-items: center;
   vertical-align: middle;
+  text-align: center;
 }
 
 /* Mobile */
@@ -118,6 +119,10 @@
   .tip {
     padding-top: 20px;
     padding-bottom: 20px;
+    text-align: left;
+  }
+
+  .center {
     text-align: left;
   }
 }

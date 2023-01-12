@@ -267,6 +267,11 @@ export default function Home() {
             <main className={styles.main}>
                 <div>
                     <h1> Ethereum Transaction Merkle Tree Visualizer</h1>
+                    <p className={appstyles.center}>
+                        <a href="https://github.com/milindmovasha/show-merkle-tree">
+                            (https://github.com/milindmovasha/show-merkle-tree)
+                        </a>
+                    </p>
                     <div className={appstyles.topMargin}>
                         <form onSubmit={handleSubmit}>
                             <label className={appstyles.formMargin} htmlFor="blockNumber">

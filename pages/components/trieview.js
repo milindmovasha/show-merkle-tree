@@ -83,7 +83,12 @@ class TrieView extends React.Component {
         this.processNodeClick = this.processNodeClick.bind(this)
         this.processTransactionClick = this.processTransactionClick.bind(this)
         this.simulateNodeClick = this.simulateNodeClick.bind(this)
+        this.setContainer = this.setContainer.bind(this)
         this.state = {}
+    }
+
+    setContainer(tc) {
+        this.treeContainer = tc
     }
 
     componentDidMount() {
@@ -285,23 +290,27 @@ class TrieView extends React.Component {
     render() {
         //console.log("TrieView props")
         //console.log(this.props.trieJson)
-        var childDiv = (
-            <Tree
-                data={this.props.trieJson}
-                orientation="vertical"
-                shouldCollapseNeighborNodes="true"
-                initialDepth="0"
-                centeringTransitionDuration="800"
-                translate={this.state.translate}
-                rootNodeClassName={appstyles.node__root}
-                branchNodeClassName={appstyles.node__branch}
-                leafNodeClassName={appstyles.node__leaf}
-                pathClassFunc={this.getDynamicPathClass}
-                renderCustomNodeElement={(rd3tProps) =>
-                    renderNode({ ...rd3tProps }, this.processNodeClick)
-                }
-            />
-        )
+        var childDiv = <div></div>
+
+        if (this.props.trieJson) {
+            childDiv = (
+                <Tree
+                    data={this.props.trieJson}
+                    orientation="vertical"
+                    shouldCollapseNeighborNodes="true"
+                    initialDepth="0"
+                    centeringTransitionDuration="800"
+                    translate={this.state.translate}
+                    rootNodeClassName={appstyles.node__root}
+                    branchNodeClassName={appstyles.node__branch}
+                    leafNodeClassName={appstyles.node__leaf}
+                    pathClassFunc={this.getDynamicPathClass}
+                    renderCustomNodeElement={(rd3tProps) =>
+                        renderNode({ ...rd3tProps }, this.processNodeClick)
+                    }
+                />
+            )
+        }
 
         return (
             <div
@@ -311,7 +320,7 @@ class TrieView extends React.Component {
                     width: "100%",
                     height: "22em",
                 }}
-                ref={(tc) => (this.treeContainer = tc)}
+                ref={(tc) => this.setContainer(tc)}
             >
                 {childDiv}
             </div>
