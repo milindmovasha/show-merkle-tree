@@ -15,7 +15,7 @@ import { BranchNode, ExtensionNode, LeafNode, decodeNode } from "@ethereumjs/tri
 import TrieViewContainer from "./components/trieviewcontainer"
 
 import testblock from "../testblock3.json"
-const TEST_MODE = 1
+const TEST_MODE = 0
 
 function serializeTransaction(transaction) {
     if (transaction.nonce !== undefined) transaction.nonce = web3.utils.toHex(transaction.nonce)
