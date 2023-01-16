@@ -2,7 +2,7 @@
 
 ![image](./images/merkle_preview.png)
 
-This is a project to visiualize the Ethereum Transaction Merkel Tree data structure using [Next.js](https://nextjs.org/) and react-d3-tree. The project fetches the block data using web3.js APIs and creates the ethereum transaction trie using the transactions data in the block. Then it walks through the trie data structure to create a json database of nodes. Finally it renders the trie nodes and node details using React components.
+This is a project to visualize the Ethereum Transaction Merkle Tree data structure using [Next.js](https://nextjs.org/) and react-d3-tree. The project fetches the block data using web3.js APIs and creates the ethereum transaction trie using the transactions data in the block. Then it walks through the trie data structure to create a json database of nodes. Finally it renders the trie nodes and node details using React components.
 
 ## Getting Started
 
