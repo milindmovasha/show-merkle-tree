@@ -59,7 +59,7 @@ class Expaination extends React.Component {
                 if (name.includes("BN")) {
                     curNibble = pathNibbles[nibbles++]
                     var branch = stacknode._branches[curNibble]
-                    if (nibbles == pathNibbles.length) {
+                    if (nibbles == pathNibbles.length + 1) {
                         li = (
                             <li key={this.getListKey()}>
                                 Our lookup path terminates at branch node {name}. We use value field
